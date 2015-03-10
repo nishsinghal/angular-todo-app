@@ -1,29 +1,70 @@
 @charset "utf-8";
 @import "compass";
 
-* {@include box-sizing(border-box);}
+* {@include box-sizing(border-box); vertical-align: top;}
+body {background:#222222; color:#ffffff; font-family: "Open Sans", sans-serif;}
+
 ul {padding:0; margin:0;}
 
 .wrap {
   width:95%; max-width:1000px; margin:50px auto;
 }
 
-.todoapp{
-  margin: 40px auto; padding: 30px; background: #f2f2f2; border: 1px solid #d1d1d1;
-  .addnew {padding-bottom:30px;}
-  input[type="text"] { height:40px; width: 50%;}
-  select { height: 40px; width: 10%;}
-  button { height: 40px; background: #6699ee; color: white; padding: 10px 20px;}
-  .todo {margin: 20px 0;}
+h1 {
+  font-size: 3em;
+  text-align: center;
+  font-weight: normal;
 }
 
-.todo li { padding: 20px; border: 1px solid #d1d1d1; list-style: none;
+.todoapp{
+  margin: 40px auto; padding: 30px; background: #1e1e1e;
+  // border: 1px solid #d1d1d1;
+  .addnew {padding-bottom:30px;}
+  input[type="text"] {
+  /* height: 40px; */
+  width: 63%;
+  padding: 0 10px 10px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  font-size: 2em;
+  background: none;
+  border: none;
+  border-bottom: 2px dashed white;
+  color: white;
+}
+  select { height: 55px; width: 20%; -webkit-appearance: menulist-button; border: none;}
+  button { height: 40px; background: #6699ee; color: white; padding:0 2%; margin-bottom:10px;
+    border: 1px solid #5588dd; border-bottom: 3px solid #4477cc; border-top: 1px solid #77aaff; border-radius: 5px;
+    &[type="submit"]{height: 55px;}
+  }
+  // .todo {margin: 20px 0;}
+}
+
+.todo li, select { padding: 10px; margin-bottom:7px; 
+  // border-top: 1px solid #1d1d1d;
+  border-bottom: 1px solid #2a2a2a; border-radius:15px; list-style: none; background: #222222;
+  -webkit-box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.3);
   input { vertical-align: middle; margin-right: 20px;}
   &.done {text-decoration: line-through;}
 }
 
 .priority{
-  color:white; border-radius:3px; padding:8px 12px; text-transform:uppercase; font-size:0.8em;
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 12px 11px 12px 15px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  float: right;
+  height: 80%;
+  width: 10%;
+  display: inline-block;
+  margin: -9px -10px;
+  -webkit-box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.3);
 }
 
 .high {background:#ee5555;}

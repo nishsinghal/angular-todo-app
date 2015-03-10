@@ -1,21 +1,22 @@
 .wrap{ ng: { app: "Todo" } }
-  %h1 To do list using Angular
+  %h1 Task list using Angular
   .todoapp{ ng: { controller: "TodoController" } }
     .addnew
       %form{ ng: { submit: "addItem()"} }
-        %input{ type: "text", required: "true", novalidate: "true", ng: { model: "newToDo.name"} }
+        %input{ type: "text", placeholder: "Write a task...", required: "true", novalidate: "true", ng: { model: "newToDo.name"} }
         %select{ ng: { model: "newToDo.priority", init: "newToDo.priority = priority[2]", options: "priority for priority in ['low','medium','high']" } }
           %option{name: "high", value: "high"}
-        %button{ type: "submit" } Add a to do
-        %button{ type: "button", ng: { click: "completeItems()"} } Complete/Uncomplete all to dos
-        %button{ type: "button", ng: { click: "removeItems()"} } Remove completed to dos
+        %button{ type: "submit" } Add a task
+        %button{ type: "button", ng: { click: "completeItems()"} } Tick/Untick all tasks
+        %button{ type: "button", ng: { click: "removeItems()"} } Remove completed tasks
     %div.todowrap
       %div.loading{ ng: { hide: "loaded"} }
         %img{ src: "images/loader.gif" }
         Loading to dos...
-      %div.empty{ ng:{ show: "items.length < 1" } } Congratulations! You've finished all your to dos!
+      %div.empty{ ng:{ show: "items.length < 1" } } Congratulations! You've finished all your tasks!
       %ul.todo{ ng: { show: "loaded" } }
         %li.animate-enter-slide-up-in{ ng: { repeat: "item in items", class: "{done: item.done}"} }
-          %input{ type: "checkbox", ng: { model: "item.done"} }
-          {{item.name}}
-          %span.priority{ ng: { class: "{high: item.priority == 'high', medium: item.priority == 'medium', low: item.priority == 'low'}"} } {{item.priority}}
+          %label
+            %input{ type: "checkbox", ng: { model: "item.done"} }
+            {{item.name}}
+          %div.priority{ ng: { class: "{high: item.priority == 'high', medium: item.priority == 'medium', low: item.priority == 'low'}"} } {{item.priority}}

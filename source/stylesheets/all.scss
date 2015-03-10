@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import "compass";
+
+* {@include box-sizing(border-box);}
+ul {padding:0; margin:0;}
+
+.wrap {
+  width:95%; max-width:1000px; margin:50px auto;
+}
+
+.todoapp{
+  margin: 40px auto; padding: 30px; background: #f2f2f2; border: 1px solid #d1d1d1;
+  .addnew {padding-bottom:30px;}
+  input[type="text"] { height:40px; width: 50%;}
+  select { height: 40px; width: 10%;}
+  button { height: 40px; background: #6699ee; color: white; padding: 10px 20px;}
+  .todo {margin: 20px 0;}
+}
+
+.todo li { padding: 20px; border: 1px solid #d1d1d1; list-style: none;
+  input { vertical-align: middle; margin-right: 20px;}
+  &.done {text-decoration: line-through;}
+}
+
+.priority{
+  color:white; border-radius:3px; padding:8px 12px; text-transform:uppercase; font-size:0.8em;
+}
+
+.high {background:#ee5555;}
+.medium {background:#ee9955;}
+.low {background:#eecc55;}
+
+.list.ng-enter{-webkit-transition:0.5s opacity; transition:0.5s opacity;}
+
+.animate-enter-slide-up-in {
+ &.ng-enter { @include transition(0.2s all); @include opacity(0); @include translateY(20px); }
+ &.ng-enter-stagger { @include transition-delay(0.05s); @include transition-duration(0s); }
+ &.ng-enter.ng-enter-active { @include opacity(1); @include translateY(0); }
+ &.ng-leave { display:none; }
+}

@@ -1,0 +1,10 @@
+[
+  {"name": "Learn more angular", "done": true},
+  {"name": "Buy a donut", "priority": "low"},
+  {"name": "Do more angular", "priority": "high"},
+  {"name": "Go shopping", "priority": "low"},
+  {"name": "angular", "priority": "medium"},
+  {"name": "Upload code", "priority": "low"},
+  {"name": "more angular", "priority": "high"},
+  {"name": "Javascript", "priority": "high"}
+]

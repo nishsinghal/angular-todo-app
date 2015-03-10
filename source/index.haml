@@ -4,8 +4,7 @@
     .addnew
       %form{ ng: { submit: "addItem()"} }
         %input{ type: "text", placeholder: "Write a task...", required: "true", novalidate: "true", ng: { model: "newToDo.name"} }
-        %select{ ng: { model: "newToDo.priority", init: "newToDo.priority = priority[2]", options: "priority for priority in ['low','medium','high']" } }
-          %option{name: "high", value: "high"}
+        %select{ ng: { model: "newToDo.priority", init: "newToDo.priority = 'Low'", options: "priority for priority in ['Low','Medium','High']" } }
         %button{ type: "submit" } Add a task
         %button{ type: "button", ng: { click: "completeItems()"} } Tick/Untick all tasks
         %button{ type: "button", ng: { click: "removeItems()"} } Remove completed tasks
